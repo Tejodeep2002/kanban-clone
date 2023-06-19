@@ -1,10 +1,10 @@
 import SingleTodo from "./SingleTodo";
-import { Droppable } from "react-beautiful-dnd";
+import { StrictModeDroppable as Droppable } from "./helpers/StrictModeDroppable";
+// import { Droppable } from "react-beautiful-dnd";
 import data from "../DataBase/db";
 import { useState } from "react";
 
 const Todolist = ({ todolist, todocol }) => {
-  const [todoAdd,setTodoAdd] = useState(false)
   const todo = data.todo;
 
   const totalTodos = todocol.map((items) =>

@@ -13,15 +13,7 @@ const TodoSection = () => {
 
   const users = data.users;
 
-  // const totalList = data.todoListPosition.map((items) =>
-  //   todoList.find((todo) => todo.id === items)
-  // );
-  // console.log(totalList);
-
- 
-
-
-
+  
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
@@ -59,17 +51,18 @@ const TodoSection = () => {
       col1.splice(destination.index, 0, add);
       
       setColumn1(col1);
+      return;
     } else if (destination.droppableId === "col2") {
       col2.splice(destination.index, 0, add);
       setColumn2(col2);
+      return;
     } else if (destination.droppableId === "col3") {
       col3.splice(destination.index, 0, add);
       setColumn3(col3);
+      return;
     }
     console.log(col1,col2,col3)
     
-    console.log()
-
     //If the user moves from on column to another column
   };
 
@@ -77,7 +70,7 @@ const TodoSection = () => {
     <>
       <div className=" w-full h-full  overflow-hidden ">
         <Header />
-        <DragDropContext onDragEnd={onDragEnd}>
+        
           <div className="relative h-screen px-6 py-[2.6rem] md:px-12 overflow-y-auto">
             <div className="w-full flex   justify-between">
               <div className="flex items-center">
@@ -158,15 +151,19 @@ const TodoSection = () => {
                 </button>
               </div>
             </div>
-
+            <DragDropContext onDragEnd={onDragEnd}>
             <div className="w-full mt-[2.7rem] flex flex-col lg:flex-row gap-4  ">
               {/* todo list */}
+              
+
               <Todolist todolist={todoList.col1} todocol={column1} />
               <Todolist todolist={todoList.col2} todocol={column2} />
               <Todolist todolist={todoList.col3} todocol={column3} />
+
             </div>
+            </DragDropContext>
           </div>
-        </DragDropContext>
+        
       </div>
     </>
   );
