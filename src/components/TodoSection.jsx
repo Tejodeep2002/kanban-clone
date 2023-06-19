@@ -2,7 +2,7 @@ import Colaborator from "./Colaborator";
 import Header from "./Header";
 import Todolist from "./Todolist";
 import { DragDropContext } from "react-beautiful-dnd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../DataBase/db";
 
 const TodoSection = () => {
@@ -18,6 +18,9 @@ const TodoSection = () => {
   // );
   // console.log(totalList);
 
+  useEffect(()=>{
+
+  })
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
@@ -73,7 +76,7 @@ const TodoSection = () => {
         <Header />
         <DragDropContext onDragEnd={onDragEnd}>
           <div className="relative h-screen px-6 py-[2.6rem] md:px-12 overflow-y-auto">
-            <div className="w-full flex flex-wrap  justify-between">
+            <div className="w-full flex   justify-between">
               <div className="flex items-center">
                 <span className="font-semibold text-[1.5rem] lg:text-[2.9rem] leading-[2.9rem] mr-[1.4rem]">
                   Mobile App
@@ -92,10 +95,10 @@ const TodoSection = () => {
               <div className=" flex items-center gap-[0.5rem]">
                 <img
                   src="images/icons/add-btn-purple.png"
-                  className=" hidden md:inline w-[15px] h-[15px]"
+                  className=" hidden lg:inline w-[15px] h-[15px]"
                   alt=""
                 />
-                <span className=" hidden md:inline -mr-3  text-[#5030E5] font-medium text-base leading-5">
+                <span className=" hidden lg:inline -mr-3  text-[#5030E5] font-medium text-base leading-5">
                   Invite
                 </span>
                 <Colaborator users={users} />
@@ -134,7 +137,7 @@ const TodoSection = () => {
                   />
                 </button>
               </div>
-              <div className=" hidden flex  gap-5 items-center">
+              <div className=" hidden md:block md:flex md:ml-2 md:gap-5 md:items-center">
                 <button className="w-[6.1rem] h-[2.5rem]  flex items-center justify-center gap-[0.5rem] border border-[#787486] rounded-md ">
                   <img
                     src="images/icons/members.png"
@@ -153,7 +156,7 @@ const TodoSection = () => {
               </div>
             </div>
 
-            <div className="w-full mt-[2.7rem] flex gap-4  ">
+            <div className="w-full mt-[2.7rem] flex flex-col lg:flex-row gap-4  ">
               {/* todo list */}
               <Todolist todolist={todoList.col1} todocol={column1} />
               <Todolist todolist={todoList.col2} todocol={column2} />

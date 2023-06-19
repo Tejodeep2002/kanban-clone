@@ -66,7 +66,7 @@ const SideBar = () => {
           <Project name={"Wireframes"} toggle={false} dotcol={"#76A5EA"} />
         </div>
 
-        <div className="relative hidden sm:block m flex-col items-center  mb-[1.9rem] mx-auto">
+        <div className="relative hidden sm:block sm:flex  sm:flex-col sm:items-center   sm:mx-auto">
           <div className="relative -bottom-8 rounded-full w-16 h-16 bg-[#f5f5f5]  flex justify-center items-center ">
             <img
               src="/images/icons/lamp-on.png"
@@ -75,7 +75,7 @@ const SideBar = () => {
               styles={{ filter: "drop-shadow(5px 5px 10px #76A5EA)" }}
             />
           </div>
-          <div className="    px-5 py-5  w-52 h-52 rounded-2xl bg-[#f5f5f5] sm:flex sm:flex-col justify-center items-center">
+          <div className=" px-5 py-5  w-52 h-52 rounded-2xl bg-[#f5f5f5] flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center gap-3 ">
               <div className="font-medium leading-[1.1rem] text-sm">
                 Thoughts Time
@@ -88,7 +88,7 @@ const SideBar = () => {
               </div>
               <input
                 type="text"
-                className="w-[10.4rem] h-[2.5rem] font-normal text-sm flex juse items-center rounded "
+                className="w-[10.4rem] h-[2.5rem] font-normal text-sm text-black px-6 rounded "
                 placeholder="Write a message"
               />
             </div>

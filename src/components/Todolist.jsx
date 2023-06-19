@@ -13,7 +13,7 @@ const Todolist = ({ todolist, todocol }) => {
 
   return (
     <>
-      <div className="w-[31rem]  relative  bg-[#F5F5F5] rounded-2xl p-5 " >
+      <div className="lg:w-[31rem]  relative  bg-[#F5F5F5] rounded-2xl p-5 " >
         <div className="flex justify-between">
           <div className="flex gap-3 items-center">
             <span
