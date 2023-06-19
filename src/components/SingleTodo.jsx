@@ -24,9 +24,17 @@ const SingleTodo = ({ todo, index }) => {
           {...provided.dragHandleProps}
         >
           <div className="flex justify-between mb-1">
-            <span className="bg-orange-200 p-[0.38rem] rounded font-medium text-xs text-[#D58D49] leading-[0.91rem]">
+            {
+              todo.status==="High"?<span className="bg-[#fbf1f2] p-[0.38rem] rounded font-medium text-xs text-[#D8727D] leading-[0.91rem]">
+              {todo.status}
+            </span>:todo.status==="Low"?<span className="bg-[#f9eee3] p-[0.38rem] rounded font-medium text-xs text-[#D58D49] leading-[0.91rem]">
+              {todo.status}
+            </span>:<span className="bg-[#e6f3eb] p-[0.38rem] rounded font-medium text-xs text-[#68B266] leading-[0.91rem]">
               {todo.status}
             </span>
+
+            }
+            
             <button>...</button>
           </div>
           <div className="flex justify-between mb-2">

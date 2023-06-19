@@ -18,9 +18,10 @@ const TodoSection = () => {
   // );
   // console.log(totalList);
 
-  useEffect(()=>{
+ 
 
-  })
+
+
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
@@ -42,6 +43,7 @@ const TodoSection = () => {
 
     //If the user drops within the same column but in diffrent position
 
+    console.log(col1,col2,col3)
     if (source.droppableId === "col1") {
       add = col1[source.index];
       col1.splice(source.index, 1);
@@ -55,17 +57,18 @@ const TodoSection = () => {
 
     if (destination.droppableId === "col1") {
       col1.splice(destination.index, 0, add);
+      
+      setColumn1(col1);
     } else if (destination.droppableId === "col2") {
       col2.splice(destination.index, 0, add);
+      setColumn2(col2);
     } else if (destination.droppableId === "col3") {
       col3.splice(destination.index, 0, add);
+      setColumn3(col3);
     }
-
-    setColumn1(col1);
-    setColumn2(col2);
-    setColumn3(col3);
-
-    return;
+    console.log(col1,col2,col3)
+    
+    console.log()
 
     //If the user moves from on column to another column
   };
@@ -78,7 +81,7 @@ const TodoSection = () => {
           <div className="relative h-screen px-6 py-[2.6rem] md:px-12 overflow-y-auto">
             <div className="w-full flex   justify-between">
               <div className="flex items-center">
-                <span className="font-semibold text-[1.5rem] lg:text-[2.9rem] leading-[2.9rem] mr-[1.4rem]">
+                <span className="font-semibold text-[1.5rem] lg:text-[2.9rem] leading-[2.9rem] mr-[1.4rem">
                   Mobile App
                 </span>
                 <img
