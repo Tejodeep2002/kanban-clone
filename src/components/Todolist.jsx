@@ -7,9 +7,9 @@ import { useState } from "react";
 const Todolist = ({ todolist, todocol }) => {
   const todo = data.todo;
 
-  const totalTodos = todocol.map((items) =>
-    todo.find((todo) => todo.id === items)
-  );
+  // const totalTodos = todocol.map((items) =>
+  //   todo.find((todo) => todo.id === items)
+  // );
 
   return (
     <>
@@ -45,7 +45,7 @@ const Todolist = ({ todolist, todocol }) => {
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-                {totalTodos.map((todo, index) => (
+                {todocol.map((todo, index) => (
                   <SingleTodo todo={todo} key={index} index={index} />
                 ))}
                 {provided.placeholder}
