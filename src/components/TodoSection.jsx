@@ -48,25 +48,24 @@ const TodoSection = () => {
 
     if (destination.droppableId === "col1") {
       col1.splice(destination.index, 0, add);
-
-      
-      
     } else if (destination.droppableId === "col2") {
       col2.splice(destination.index, 0, add);
-      
-      
     } else if (destination.droppableId === "col3") {
       col3.splice(destination.index, 0, add);
-      
-      
-    } 
-    
-    
+    }
+
     setColumn1(col1);
-  setColumn2(col2);
+    setColumn2(col2);
     setColumn3(col3);
 
-    console.log("First col",column1, "second col",column2, "third col",column3);
+    console.log(
+      "First col",
+      column1,
+      "second col",
+      column2,
+      "third col",
+      column3
+    );
 
     //If the user moves from on column to another column
   };
@@ -75,7 +74,6 @@ const TodoSection = () => {
     <>
       <div className=" w-full h-full  overflow-hidden ">
         <Header />
-
         <div className="relative h-screen px-6 py-[2.6rem] md:px-12 overflow-y-auto">
           <div className="w-full flex   justify-between">
             <div className="flex items-center">
@@ -93,7 +91,7 @@ const TodoSection = () => {
                 alt=""
               />
             </div>
-            <div className=" flex items-center gap-[0.5rem]">
+            <div className="hidden sm:block sm:flex items-center gap-[0.5rem]">
               <img
                 src="images/icons/add-btn-purple.png"
                 className=" hidden lg:inline w-[15px] h-[15px]"

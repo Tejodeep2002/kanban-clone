@@ -24,7 +24,7 @@ const Todolist = ({ todolist, todocol }) => {
               {todolist.name}
             </span>
             <div className="w-[20px] h-[20px] rounded-full bg-[#E0E0E0] flex items-center justify-center font-medium text-xs text-[#625F6D]">
-              {todolist.todo.length}
+              {todocol.length}
             </div>
           </div>
           <button style={{display:`${todolist.add?'block':'none'}`}}>
